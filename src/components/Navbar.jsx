@@ -17,7 +17,7 @@ export default function Navbar( { setDarkTheme,darkTheme}) {
         </Link>
         <button type="button" onClick={() => setDarkTheme(!darkTheme)} 
           className="text-md dark:bg-gray-50 dark:text-gray-900
-          bg-white border rounded-full px-2 py-1 hover:shadow-lg">
+          bg-gray-400 text-gray-100 border rounded-full px-2 py-1 hover:shadow-lg">
             {darkTheme ? '💡 Light' : '🌙 Dark'}
         </button>
       </div>
