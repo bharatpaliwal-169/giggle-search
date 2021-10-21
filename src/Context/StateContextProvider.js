@@ -20,11 +20,10 @@ export const ResultContextProvider = ({children}) => {
         'x-rapidapi-host': 'google-search3.p.rapidapi.com',
         'x-rapidapi-key': 'a7a04f94f4msh9d2fefb9c5b8378p1daba8jsne698d222e2fd'
       }
-
     });
 
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     setResults(data);
     setIsLoading(false);
 

@@ -32,3 +32,8 @@ Accepts a context object (the value returned from React.createContext) and retur
 
 A component calling useContext will always re-render when the context value changes. If re-rendering the component is expensive, you can optimize it by using memoization.
 
+## Debounce
+
+debounce() function accepts the callback argument function, and returns a debounced version of that function. When the debounced function debouncedCallback gets invoked multiple times, in bursts, it will invoke the callback only after waitTime has passed after the last invocation
+
+https://medium.com/swlh/debouncing-in-react-js-83befe93a5ee

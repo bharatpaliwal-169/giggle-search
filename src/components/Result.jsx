@@ -25,7 +25,7 @@ export default function Result() {
   if(isLoading){
     return <Loading />;
   }
-  console.log(location.pathname);
+  // console.log(location.pathname);
   switch (location.pathname) {
     case '/search':
       return (

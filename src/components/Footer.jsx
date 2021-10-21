@@ -7,7 +7,8 @@ export default function Footer() {
     dark:border-gray-700 border-gray-200 ">
       © 2021 Giggle, Inc.
     </div>
-    <div className="text-left p-2 mt-2 pb-10
+
+    <div className="text-center p-2 mt-2 pb-5
     dark:border-gray-700 border-gray-200 ">
       Developed by - Bharat Paliwal
     </div>
