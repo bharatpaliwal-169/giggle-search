@@ -19,7 +19,7 @@ export const ResultContextProvider = ({children}) => {
         'x-user-agent': 'desktop',
         'x-proxy-location': 'IN',
         'x-rapidapi-host': 'google-search3.p.rapidapi.com',
-        'x-rapidapi-key': 'a7a04f94f4msh9d2fefb9c5b8378p1daba8jsne698d222e2fd'
+        'x-rapidapi-key': 'b0cd484c5emsh8dc88d9f915266fp1e9c4bjsn6a3000d41d73'
       }
     });
 
