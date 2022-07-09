@@ -2,16 +2,39 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" type="image/png" href="./images/main_logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app"/>
+    <meta name="description" content="A PWA React application Google clone"/>
+    <meta name="theme-color" content="#ffffff" />
+    <meta content="Giggle,Search" name="keywords">
+    <meta property="og:title" content="Giggle Search">
+    <meta property="og:image" content="./images/main_logo.png">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="task-list23.netlify.app">
+    <meta property="og:description" content="Giggle Search - A PWA React Google Clone using RapidAPIs">
+  
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="Giggle Search">
+    <meta name="twitter:description" content="Giggle Search - A PWA React Google Clone using RapidAPIs">
+    <meta name="twitter:image" content="./images/main_logo.png">
+    <link rel="apple-touch-icon" href="./images/main_logo.png" />
+    <link rel="manifest" href="./manifest.json" />
     
     <title>Giggle Search</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    
+
+    <script>
+      if('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./serviceworker.js')
+                .then((reg) => console.log('Success: ', reg.scope))
+                .catch((err) => console.log('Failure: ', err));
+        })
+      }
+    </script>
   </body>
 </html>

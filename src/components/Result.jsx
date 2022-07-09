@@ -25,9 +25,25 @@ export default function Result() {
   if(isLoading){
     return <Loading />;
   }
-  console.log(location.pathname);
   switch (location.pathname) {
     case '/search':
+  
+  switch (location.pathname) {
+    case '/search':
+      if(results.length <= 0) {
+        return (
+          <div className='text-center text-red-500 text-3xl  font-bold'>
+            Sorry! No Information Available Currently.
+
+            <div className='text-center text-gray-500 text-sm  py-4 '>
+              <ul>
+                <li>Please check the spelling of the search term.</li>
+                <li>Try Refreshing the page.</li>
+              </ul>
+            </div>
+          </div>
+        )
+      }
       return (
         <div className='flex flex-wrap justify-between space-y-6 sm:px-56'>
           {results?.results?.map(({link,title,description},index)=>(
@@ -42,6 +58,13 @@ export default function Result() {
         </div>
       )
     case '/image':
+      if(!results.image_results) {
+        return (
+          <div className='text-center text-red-500 text-2xl  font-bold'>
+            Sorry! No images were found.
+          </div>
+        )
+      }
       return (
         <div className="flex flex-wrap justify-center items-center">
           {results?.image_results?.map(({ image, link: { href, title } }, index) => (
@@ -53,6 +76,13 @@ export default function Result() {
         </div>
       )
     case '/news':
+      if(results.length <= 0) {
+        return (
+          <div className='text-center text-red-500 text-2xl  font-bold'>
+            Sorry! No news were found.
+          </div>
+        )
+      }
       return (
         <div className="sm:px-56 flex flex-wrap justify-between items-center space-y-6">
           {results?.entries?.map(({ id, links, source, title }) => (
@@ -68,6 +98,13 @@ export default function Result() {
         </div>
       );
     case '/videos':
+      if(results.length <= 0) {
+        return (
+          <div className='text-center text-red-500 text-2xl  font-bold'>
+            Sorry! No videos available currently.
+          </div>
+        )
+      }
       return (
         <div className="flex flex-wrap ">
           {results?.results?.map((video, index) => (

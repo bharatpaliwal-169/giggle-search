@@ -7,7 +7,7 @@ import {Links} from './Links'
 export default function Search() {
   const { setSearchTerm } = useResultContext();
   const [text, setText] = useState('Breaking News');
-  const [debouncedValue] = useDebounce(text, 300);
+  const [debouncedValue] = useDebounce(text, 500);
 
   useEffect(() => {
     if (debouncedValue) setSearchTerm(debouncedValue);
