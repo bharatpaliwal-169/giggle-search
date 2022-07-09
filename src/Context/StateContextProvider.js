@@ -17,14 +17,14 @@ export const ResultContextProvider = ({children}) => {
       method : 'GET',
       headers: {
         'x-user-agent': 'desktop',
-        'x-proxy-location': 'IN',
         'x-rapidapi-host': 'google-search3.p.rapidapi.com',
-        'x-rapidapi-key': 'b0cd484c5emsh8dc88d9f915266fp1e9c4bjsn6a3000d41d73'
+        'x-rapidapi-key': '2b8bcf9384mshe27b0afd1ae480fp1edf07jsnb129461cf1ac'
       }
+
     });
 
     const data = await response.json();
-    // console.log(data);
+    console.log(data);
     setResults(data);
     setIsLoading(false);
 

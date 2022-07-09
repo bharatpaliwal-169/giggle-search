@@ -13,7 +13,7 @@ export default function Routes() {
         <Route exact path="/search">
           <Result/>
         </Route>
-        <Route path="/images">
+        <Route path="/image">
           <Result/>
         </Route>
         <Route path="/news">

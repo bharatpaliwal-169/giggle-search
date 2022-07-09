@@ -7,7 +7,6 @@ const Loading  = () => {
       <Loader type='Bars' color="00BFFF" height={550} width={80}className="dark:text-white" />
     </div>
   )
-
 }
 
 export default Loading;

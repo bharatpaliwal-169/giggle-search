@@ -25,8 +25,8 @@ export default function Result() {
   if(isLoading){
     return <Loading />;
   }
-  // console.log(location.pathname);
-  console.log(results);
+  switch (location.pathname) {
+    case '/search':
   
   switch (location.pathname) {
     case '/search':
@@ -57,7 +57,7 @@ export default function Result() {
           ))}
         </div>
       )
-    case '/images':
+    case '/image':
       if(!results.image_results) {
         return (
           <div className='text-center text-red-500 text-2xl  font-bold'>
