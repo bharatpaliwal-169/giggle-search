@@ -1,6 +1,6 @@
 import React from 'react';
 import {Switch,Route,Redirect} from 'react-router-dom';
-import  Result  from './components/Result';
+import  {Results}  from './components/Result';
 
 
 export default function Routes() {
@@ -11,16 +11,16 @@ export default function Routes() {
           <Redirect to="/search"></Redirect>
         </Route>
         <Route exact path="/search">
-          <Result/>
+          <Results/>
         </Route>
         <Route path="/image">
-          <Result/>
+          <Results/>
         </Route>
         <Route path="/news">
-          <Result/>
+          <Results/>
         </Route>
         <Route path="/videos">
-          <Result/>
+          <Results/>
         </Route>
         
       </Switch>

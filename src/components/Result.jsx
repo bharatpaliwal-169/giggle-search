@@ -5,11 +5,9 @@ import {useResultContext} from '../Context/StateContextProvider';
 
 import Loading from './Loading';
 
-export default function Result() {
-
+export function Results(){
   const {results,isLoading,getResults,searchTerm} = useResultContext();
   const location = useLocation(); // gives types
-
 
   useEffect(() => {
     if (searchTerm !== '') {
@@ -21,13 +19,10 @@ export default function Result() {
     }
   }, [searchTerm, location.pathname]);
 
-
   if(isLoading){
     return <Loading />;
   }
-  switch (location.pathname) {
-    case '/search':
-  
+
   switch (location.pathname) {
     case '/search':
       if(results.length <= 0) {
@@ -44,6 +39,7 @@ export default function Result() {
           </div>
         )
       }
+
       return (
         <div className='flex flex-wrap justify-between space-y-6 sm:px-56'>
           {results?.results?.map(({link,title,description},index)=>(
@@ -114,10 +110,9 @@ export default function Result() {
           ))}
         </div>
       );
-            
     
     default:
-      return 'ERROR'
+      return 'ERROR';
   }
 
 }
