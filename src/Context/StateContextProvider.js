@@ -2,7 +2,8 @@ import React,{ createContext,useContext,useState} from 'react';
 
 const ResultContext = createContext();
 
-const baseURL = 'https://google-search3.p.rapidapi.com/api/v1';
+// const baseURL = 'https://google-search74.p.rapidapi.com/';
+// https://google-search74.p.rapidapi.com/?query=Nike&limit=10&related_keywords=true
 
 export const ResultContextProvider = ({children}) => {
   const [results , setResults] = useState([]);
@@ -10,20 +11,21 @@ export const ResultContextProvider = ({children}) => {
   const [searchTerm,setSearchTerm] = useState('');
 
   // videos , search , images , news
-  const getResults = async (type) => {
+  const getResults = async (query) => {
     setIsLoading(true);
-
-    const response = await fetch(`${baseURL}${type} `,{
+    // const response = () => {}
+    const response = await fetch(`https://google-search74.p.rapidapi.com/?query=${query}&limit=50&related_keywords=true`,{
       method : 'GET',
       headers: {
-        'x-user-agent': 'desktop',
-        'x-rapidapi-host': 'google-search3.p.rapidapi.com',
-        'x-rapidapi-key': '2b8bcf9384mshe27b0afd1ae480fp1edf07jsnb129461cf1ac'
-      }
-
+          'x-user-agent': 'desktop',
+          'x-rapidapi-host': 'google-search74.p.rapidapi.com',
+          'x-rapidapi-key': '3cc9c479camsh1e42665e8def39dp162b11jsn2fa01a7ff598'
+        },
+      params:query
     });
-
+    // console.log(type);
     const data = await response.json();
+    // const data = {};
     console.log(data);
     setResults(data);
     setIsLoading(false);
