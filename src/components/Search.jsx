@@ -1,8 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { useDebounce } from 'use-debounce'
-import {useResultContext} from '../Context/StateContextProvider'
-import {Links} from './Links'
-
+import {useResultContext} from '../context/StateContextProvider.jsx'
 
 export default function Search() {
   const { setSearchTerm } = useResultContext();
@@ -13,7 +11,7 @@ export default function Search() {
     if (debouncedValue) setSearchTerm(debouncedValue);
   }, [debouncedValue]);
   return (
-    <div className="relative sm:ml-48 md:ml-72 sm:-mt-10 mt-3">
+    <div className="relative sm:ml-48 md:ml-96 sm:-mt-10 mt-3 mb-3">
       <input
         value={text}
         type="text"
@@ -27,9 +25,6 @@ export default function Search() {
           x
         </button>
       )}
-
-      <Links />
-
     </div>
   );
 };

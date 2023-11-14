@@ -5,7 +5,7 @@ export default function Footer() {
     <>
     <div className="text-center p-10 mt-10 border-t
     dark:border-gray-700 border-gray-200 ">
-      © 2021 Giggle, Inc.
+      © 2023 Giggle, Inc.
     </div>
 
     <div className="text-center p-2 mt-2 pb-5
